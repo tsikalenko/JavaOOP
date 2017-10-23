@@ -13,11 +13,11 @@ public class Main {
 		
 		Phone phone3 = new Phone("Maizu 5S", "Grey", 789);
 		
-		phone1.callOut(phone2);
+		phone1.callOut(456);
 		
 		System.out.println();
 		
-		phone2.callOut(phone3);
+		phone2.callOut(789);
 	}
 
 }
