@@ -49,16 +49,16 @@ public class Phone {
 		Network.addNumber(number);
 	}
 	
-	public void callOut(Phone phone) {
-		if(Network.Find(phone.getNumber())) {
-			System.out.println("Caling: " + phone.getNumber());
-			phone.callIn(number);
+	public void callOut(long number) {
+		if(Network.find(number)) {
+			System.out.println("Caling: " + number);
+			phone.callIn(this.number);
 		} else {
-			System.out.println("Number " + phone.getNumber() + " incorrect!");
+			System.out.println("Number " + number + " incorrect!");
 		}
 	}
 	
 	private void callIn(long number) {
-		System.out.println("Õou called number: " + number);
+		System.out.println("√çou called number: " + number);
 	}
 }
