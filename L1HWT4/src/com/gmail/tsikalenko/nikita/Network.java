@@ -11,7 +11,7 @@ public class Network {
 		}
 	}
 	
-	public static boolean Find(long number) {
+	public static boolean find(long number) {
 		String n = "";
 		n += number;
 		if(sb.indexOf(n) == -1) {
