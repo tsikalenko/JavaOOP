@@ -52,13 +52,8 @@ public class Phone {
 	public void callOut(long number) {
 		if(Network.find(number)) {
 			System.out.println("Caling: " + number);
-			phone.callIn(this.number);
 		} else {
 			System.out.println("Number " + number + " incorrect!");
 		}
-	}
-	
-	private void callIn(long number) {
-		System.out.println("Íou called number: " + number);
 	}
 }
