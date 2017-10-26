@@ -24,7 +24,7 @@ public class Main {
 		Circle c1 = new Circle(pco, pcr);
 		
 		d1.addFigure(c1, 1);
-		d1.addFigure(t1, 0);
+		d1.addFigure(t1, 4);
 		d1.addFigure(r1, 3);
 		
 		System.out.println(d1);
