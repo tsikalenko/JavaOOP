@@ -9,12 +9,12 @@ public class Desk {
 		this.name = name;
 	}
 
-	public Desk() {
-		super();
+	public String getName() {
+		return name;
 	}
 
-	public Shape[] getDesk() {
-		return desk;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setDesk(Shape[] desk) {
