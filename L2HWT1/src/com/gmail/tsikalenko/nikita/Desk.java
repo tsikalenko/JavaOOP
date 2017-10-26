@@ -22,16 +22,21 @@ public class Desk {
 	}
 
 	public void addFigure(Shape f, int numberPlace) {
-		if(numberPlace >= 0 && numberPlace < 4)
-		if (desk[numberPlace] == null) {
-			desk[numberPlace] = f;
+		if(numberPlace - 1 >= 0 && numberPlace - 1 < 4)
+		if (desk[numberPlace - 1] == null) {
+			desk[numberPlace - 1] = f;
 		} else {
 			System.out.println("Sorry, place " + numberPlace + " is dice!");
 		}
 	}
 
 	public void delFigure(int numberPlace) {
-		desk[numberPlace] = null;
+		if (desk[numberPlace - 1] != null && numberPlace - 1 >= 0 && numberPlace < 4) {
+			desk[numberPlace - 1] = null;
+			System.out.println("Shape deleted");
+		} else {
+			System.out.println("Place is free");
+		}
 	}
 
 	@Override
