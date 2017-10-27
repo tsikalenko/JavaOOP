@@ -14,13 +14,15 @@ public class Group {
 	}
 
 	public void addStudent(Student newStudent) throws GroupException {
-		if (students[9] != null) {
-			throw new GroupException();
-		}
-		for (int i = 0; i < students.length; i++) {
-			if (students[i] == null) {
-				students[i] = newStudent;
-				break;
+		if (newStudent != null) {
+			if (students[9] != null) {
+				throw new GroupException();
+			}
+			for (int i = 0; i < students.length; i++) {
+				if (students[i] == null) {
+					students[i] = newStudent;
+					break;
+				}
 			}
 		}
 	}
@@ -28,18 +30,20 @@ public class Group {
 	public void deleteStudent(Student student) {
 		boolean studentDelete = false;
 		for (int i = 0; i < students.length; i++) {
-			if (students[i] == student) {
-				students[i] = null;
-				studentDelete = true;
-				for (int j = i + 1; j < students.length; j++) {
-					if (students[j] != null) {
-						students[j - 1] = students[j];
-						students[j] = null;
-					} else {
-						break;
+			if (students[i] != null) {
+				if (students[i].toString().equals(student.toString())) {
+					students[i] = null;
+					studentDelete = true;
+					for (int j = i + 1; j < students.length; j++) {
+						if (students[j] != null) {
+							students[j - 1] = students[j];
+							students[j] = null;
+						} else {
+							break;
+						}
 					}
+					break;
 				}
-				break;
 			}
 		}
 		if (studentDelete) {
