@@ -43,10 +43,10 @@ public class CopyPart implements Runnable{
 			long byteCopyAll = 0;
 			inSt.skip(begin);
 			byte[] bufferArrey = new byte[1024 * 1024];
-			{
+			do {
 				byteCopy = inSt.read(bufferArrey);
 				ouSt.write(bufferArrey, 0, byteCopy);
-			} for (; (byteCopyAll += byteCopy) <= end || inSt.available() > 0;);
+			} while ((byteCopyAll += byteCopy) <= end || inSt.available() > 0);
 			this.fileIsCopy = true;
 		} catch (IOException e) {
 			throw e;
