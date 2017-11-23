@@ -3,7 +3,9 @@ package com.gmail.tsikalenko.nikita;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Dictionary {
+public class Dictionary implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private Map<String, String> dictionary = new HashMap<>();
 
