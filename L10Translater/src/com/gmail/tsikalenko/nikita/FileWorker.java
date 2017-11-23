@@ -27,5 +27,21 @@ public class FileWorker {
 			System.out.println("ERROR FILE WRITE");
 		}
 	}
+	
+	public static void saveObject(Object obj, File file) {
+		try (ObjectOutput oos = new ObjectOutputStream(new FileOutputStream(file))) {
+			oos.writeObject(obj);
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public static Object loadObject(File file) {
+		try(ObjectInput ois = new ObjectInputStream(new FileInputStream(file))) {
+			return ois.readObject();
+		} catch (Exception e) {
+			return null;
+		}
+	}
 
 }
